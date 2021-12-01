@@ -1,0 +1,16 @@
+{
+  "name": "perso",
+  "version": "1.0.0",
+  "description": "This is my personal website",
+  "repository": "git@github.com:cchampou/perso.git",
+  "author": "cchampou <clement@champouillon.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^2.2.19",
+    "typescript": "^4.5.2",
+    "vite": "^2.6.14"
+  }
+}
