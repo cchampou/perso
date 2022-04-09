@@ -2,19 +2,19 @@
 export default {
   data() {
     return {
-      greeting: 'Hello World!'
+      jobTitle: 'Fullstack web developer'
     }
   }
 }
 </script>
 
 <template>
-  <p class="greeting">{{ greeting }}</p>
+  <p class="greeting">{{ jobTitle }}</p>
 </template>
 
 <style>
 .greeting {
-  color: red;
+  color: darkblue;
   font-weight: bold;
 }
 </style>
