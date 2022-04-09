@@ -9,11 +9,11 @@ export default {
 </script>
 
 <template>
-  <p class="greeting">{{ jobTitle }}</p>
+  <p id="job-title" itemprop="jobTitle">{{ jobTitle }}</p>
 </template>
 
 <style>
-.greeting {
+#job-title {
   color: darkblue;
   font-weight: bold;
 }
