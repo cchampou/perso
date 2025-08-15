@@ -7,14 +7,36 @@
     <meta name="description" content="Clement CHAMPOUILLON's personal webpage. A software developer with a passion for coding and technology.">
     <meta name="author" content="Clement CHAMPOUILLON">
     <style>
+:root {
+  --linkedin-color: #0077B5;
+  --github-color: #333;
+}
 body {
   font-family: Arial, sans-serif;
+}
+#hero {
+  text-align: center;
+}
+.social-links {
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+#li-link {
+  background-color: var(--linkedin-color);
+}
+#gh-link {
+  background-color: var(--github-color);
 }
     </style>
 </head>
 <body>
-    <h1>Clement CHAMPOUILLON</h1>
-    <p>I am a 30 y.o. software developer.</p>
+    <section id="hero">
+      <h1>Clement CHAMPOUILLON</h1>
+      <p>I am a 30 y.o. software developer.</p>
+      <a target="_blank" href="https://linkedin.com/in/cchampou" class="social-links" id="li-link">LinkedIn</a>
+      <a target="_blank" href="https://github.com/cchampou" class="social-links" id="gh-link">GitHub</a>
+    </section>
     <h2>What I do</h2>
     <p>
       Currently, I am working at <a target="_blank" href="https://hivebrite.io/">Hivebrite</a> as a senior React Native developer.
@@ -30,7 +52,5 @@ body {
       I struggled to find my way, going from a two-year degree in electronics, electrotechnique and embedded systems, to a brief startup experience, but I finally found my way in software development.
       Beeing a self-taught developer, I learned a lot by following online courses, and working on personal projects. Then the 42 school in Paris was sealing the deal, and helped me reach professional level.
     </p>
-    <a target="_blank" href="https://linkedin.com/in/cchampou">LinkedIn</a>
-    <a target="_blank" href="https://github.com/cchampou">GitHub</a>
 </body>
 </html>
