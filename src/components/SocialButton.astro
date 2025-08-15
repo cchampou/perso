@@ -1,0 +1,16 @@
+---
+const { label, href, color } = Astro.props;
+---
+<style>
+  .social-links {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+  }
+</style>
+  <a
+    target="_blank"
+    href={href}
+    class="social-links"
+    style={`background-color: ${color};`}
+  >{label}</a>
