@@ -11,8 +11,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <meta name="description" content={description}>
-    <meta name="author" content="Clement CHAMPOUILLON">
-    <style>
+<style>
 :root {
   --linkedin-color: #0077B5;
   --github-color: #333;
@@ -24,11 +23,17 @@ body {
   margin: auto;
   max-width: 800px;
 }
-    </style>
-      </head>
+</style>
+<style is:global>
+  .no-margin {
+    margin: 0;
+  }
+</style>   <meta name="author" content="Clement CHAMPOUILLON">    
+</head>
       <body>
         <div id="content">
-          <slot />
+          <slot>
+          </slot>
         </div>
       </body>
 </html>

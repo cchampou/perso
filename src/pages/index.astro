@@ -6,26 +6,81 @@ import HomeContent from '../content/homepage.md';
 ---
 <style>
 #hero {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: solid 1px black;
+  padding: 8px;
+  max-width: 400px;
+  margin: 64px auto;
+  font-size: 14px;
+}
+#hero-img {
+  display: flex;
+  flex-grow: 0;
+  flex: 1;
+}
+#hero-text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+#hero-text p {
+  margin: 0;
+}
+.field {
+  font-weight: bold;
+  margin-right: 4px;
+}
+#social-links {
+  align-self: center;
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
 }
 </style>
 <BasePage 
   title="Clement Champouillon - Software Developer"
   description="Personal website of Clement Champouillon, a software developer based in Lyon, France.">
-    <header id="hero">
-      <h1>Clement CHAMPOUILLON</h1>
-      <img src="/pp.webp" alt="Clement Champouillon" width="297" height="400" />
-      <p>I am a 30 y.o. software developer.</p>
-      <SocialButton
-        label="LinkedIn"
-        href="https://linkedin.com/in/cchampou"
-        color="var(--linkedin-color)"
-      />
-      <SocialButton
-        label="GitHub"
-        href="https://github.com/cchampou"
-        color="var(--github-color)"
-      />
-    </header>
-    <HomeContent />
+<header id="hero">
+  <div id="hero-img">
+    <img src="/pp.webp" alt="Clement Champouillon" id="hero-img" width="100%"/>
+  </div>
+  <div id="hero-text">
+    <p>
+      <span class="field">Name</span>
+      <span>Clement Champouillon</span>
+    </p>
+    <p>
+      <span class="field">Nationality</span>
+      <span>French</span>
+    </p>
+    <p>
+      <span class="field">Location</span>
+      <a href="#where-i-live">Lyon, France</a>
+    </p>
+    <p>
+      <span class="field">Languages</span>
+      <span >french, english, german</span>
+    </p>
+    <p>
+      <span class="field">Studies</span>
+      <a href="#how-i-learned-software-development">a mess, but led me to software development</a>
+    </p>
+    <p>
+      <span class="field">Profession</span>
+      <a href="#what-i-do">software developer</a>
+    </p>
+    <p>
+      <span class="field">Volunteer activities</span>
+      <a href="#">first aid</a>
+    </p>
+    <p>
+      <span class="field">Hobbies</span>
+      programming, electronics, sailing, traveling, photography, sport
+    </p>
+  </div>
+</header>
+<HomeContent />
 </BasePage>
