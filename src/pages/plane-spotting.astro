@@ -1,6 +1,16 @@
 ---
 import BasePage from '../layouts/BasePage.astro';
 ---
+<script is:client>
+  function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    const button = document.querySelector('button');
+    button.textContent = body.classList.contains('dark-mode') ?
+      'Disable Dark Mode' :
+      'Enable Dark Mode';
+  }
+</script>
 <BasePage title="Plane Spotting">
   <h1>Plane Spotting</h1>
   <p>
@@ -16,6 +26,7 @@ import BasePage from '../layouts/BasePage.astro';
   <strong>Runways:</strong> 17R/35L (4000m/13,123ft), 17L/35R (2,679m/8,760ft)
   </p>
   <h2>Photos</h2>
+  <button onclick="toggleDarkMode()">Toggle Dark Mode for a better experience!</button>
   <figure>
     <img src="/easy.jpg" alt="Airbus A320" />
     <figcaption>

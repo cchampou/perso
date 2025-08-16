@@ -1,11 +1,20 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-eqcieprt> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Plane Spotting</title><meta name="description"><meta name="author" content="Clement CHAMPOUILLON"><style>.no-margin{margin:0}figure{max-width:100%;width:400px;margin:16px auto;text-align:center}figure img{width:100%}:root{--linkedin-color: #0077B5;--github-color: #333}body{font-family:Arial,sans-serif}#content[data-astro-cid-eqcieprt]{margin:auto;max-width:800px}
+<!DOCTYPE html><script is:client>
+  function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    const button = document.querySelector('button');
+    button.textContent = body.classList.contains('dark-mode') ?
+      'Disable Dark Mode' :
+      'Enable Dark Mode';
+  }
+</script> <html lang="en" data-astro-cid-eqcieprt> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Plane Spotting</title><meta name="description"><meta name="author" content="Clement CHAMPOUILLON"><style>.no-margin{margin:0}figure{max-width:100%;width:400px;margin:16px auto;text-align:center}figure img{width:100%}:root{--linkedin-color: #0077B5;--github-color: #333}body{font-family:Arial,sans-serif}body.dark-mode{background-color:#121212;color:#dedede}#content[data-astro-cid-eqcieprt]{margin:auto;max-width:800px}
 </style></head> <body data-astro-cid-eqcieprt> <div id="content" data-astro-cid-eqcieprt>  <h1>Plane Spotting</h1> <p>
 I am a plane spotter, and I enjoy taking pictures of planes at the airport.
   Because I live in Lyon, France, I often go to <a href="https://en.wikipedia.org/wiki/Lyon-Saint_Exup%C3%A9ry_Airport" target="_blank">Lyon-Saint Exupéry Airport</a> (LFLL).
 </p> <h2>Lyon St Exupéry Airport (LFLL)</h2> <p> <strong>Location:</strong> 45°43′32″N 005°04′52″E
 <br> <strong>Elevation:</strong> 250 m (821 ft)
 <br> <strong>Runways:</strong> 17R/35L (4000m/13,123ft), 17L/35R (2,679m/8,760ft)
-</p> <h2>Photos</h2> <figure> <img src="/easy.jpg" alt="Airbus A320"> <figcaption>
+</p> <h2>Photos</h2> <button onclick="toggleDarkMode()">Toggle Dark Mode for a better experience!</button> <figure> <img src="/easy.jpg" alt="Airbus A320"> <figcaption>
 EasyJet Airbus A320-214 (OE-IZG)<br>
 LFLL departure to HEGN<br>
 17th May 2025
