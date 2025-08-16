@@ -24,11 +24,29 @@ function toggleEmail() {
   const email = window.location.hostname.replace('t.', 't@');
   const emailLink = document.createElement('a');
   emailLink.href = 'mailto:' + email;
-  emailLink.textContent = email;
+  emailLink.textContent = 'Click to email me with your email client';
   emailButton.replaceWith(emailLink);
+  const copyButton = document.createElement('a');
+  copyButton.textContent = 'Copy email';
+  copyButton.href = 'javascript:void(0)';
+  copyButton.onclick = () => copyValueToClipboard(copyButton, email);
+  emailLink.parentNode.insertBefore(copyButton, emailLink.nextSibling);
+  emailLink.style.display = 'block';
+  emailLink.style.marginTop = '8px';
+}
+function copyValueToClipboard(element, value) {
+  navigator.clipboard.writeText(value).then(() => {
+    const copiedConfirmation = document.createElement('span');
+    copiedConfirmation.textContent = 'Copied!';
+    copiedConfirmation.style.color = 'green';
+    copiedConfirmation.style.marginLeft = '8px';
+    element.parentNode.insertBefore(copiedConfirmation, element.nextSibling);
+    setTimeout(() => {
+      copiedConfirmation.remove();
+    }, 2000);
+  });
 }
 </script>
-
 <BasePage>
   <h1>Get in touch</h1>
   <h2>Phone</h2>
@@ -40,7 +58,13 @@ function toggleEmail() {
     me using <a href="https://signal.org" target="_blank">Signal</a> or <a href="http://threema.id/" target="_blank">Threema</a>.
   </p>
   <div style="width: 200px">
-    Threema QR Code: (ZPZMH52Y)
+    <p>
+    Threema<br />
+    ZPZMH52Y<br />
+    <a onclick="copyValueToClipboard(this, 'ZPZMH52Y')" href="javascript:void(0)">
+      Copy Threema ID
+    </a>
+    </p>
     <Threema />
   </div>
   <h2>Email</h2>
