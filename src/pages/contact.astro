@@ -1,0 +1,58 @@
+---
+import BasePage from '../layouts/BasePage.astro';
+import Threema from '../components/Threema.astro';
+---
+<style>
+#captcha-dots {
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  width: 16px;
+  height: 16px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot:hover {
+  background-color: #aaa;
+}
+</style>
+<script is:client>
+function toggleEmail() {
+  const emailButton = document.querySelector('button');
+  const email = window.location.hostname.replace('t.', 't@');
+  const emailLink = document.createElement('a');
+  emailLink.href = 'mailto:' + email;
+  emailLink.textContent = email;
+  emailButton.replaceWith(emailLink);
+}
+</script>
+
+<BasePage>
+  <h1>Get in touch</h1>
+  <h2>Phone</h2>
+  <p>
+    If we already met, you may have my phone number, and if you have dozens of
+    Clement in your contacts, my number is (+33)6 xx xx xx 84.
+    <br />
+    <strong>Do not contact me using Whatsapp</strong>, but you can freely contact
+    me using <a href="https://signal.org" target="_blank">Signal</a> or <a href="http://threema.id/" target="_blank">Threema</a>.
+  </p>
+  <div style="width: 200px">
+    Threema QR Code: (ZPZMH52Y)
+    <Threema />
+  </div>
+  <h2>Email</h2>
+  <p>
+    You can contact me by email, either for professional or personal matters.
+    <button onclick="toggleEmail()">
+      Show email
+    </button>
+  </p>
+  <h2>Professional or business inquiries</h2>
+  Check out my LinkedIn and contact me there if you want to discuss!
+  <a href="https://www.linkedin.com/in/cchampou/" target="_blank" rel="noopener noreferrer">
+    Go to my LinkedIn profile
+  </a>
+</BasePage>
