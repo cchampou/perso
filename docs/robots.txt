@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://clement.champouillon.com/sitemap-index.xml
