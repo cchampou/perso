@@ -1,33 +1,17 @@
 ---
 import SocialButton from '../components/SocialButton.astro';
+import BasePage from '../layouts/BasePage.astro';
+
+import HomeContent from '../content/homepage.md';
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clement CHAMPOUILLON</title>
-    <meta name="description" content="Clement CHAMPOUILLON's personal webpage. A software developer with a passion for coding and technology.">
-    <meta name="author" content="Clement CHAMPOUILLON">
-    <style>
-:root {
-  --linkedin-color: #0077B5;
-  --github-color: #333;
-}
-body {
-  font-family: Arial, sans-serif;
-}
-#content {
-  margin: auto;
-  max-width: 800px;
-}
+<style>
 #hero {
   text-align: center;
 }
-    </style>
-</head>
-<body>
-    <div id="content">
+</style>
+<BasePage 
+  title="Clement Champouillon - Software Developer"
+  description="Personal website of Clement Champouillon, a software developer based in Lyon, France.">
     <header id="hero">
       <h1>Clement CHAMPOUILLON</h1>
       <p>I am a 30 y.o. software developer.</p>
@@ -42,26 +26,5 @@ body {
         color="var(--github-color)"
       />
     </header>
-    <h2>What I do</h2>
-    <p>
-      Currently, I am working at <a target="_blank" href="https://hivebrite.io/">Hivebrite</a> as a senior React Native developer.
-    </p>
-    <h2>Where I live</h2>
-    <p>
-      I live in Lyon, France. It's a beautiful city located in the middle of the country, known for its rich history, culture, and gastronomy.
-      Lyon is the third-largest city in France, after Paris and Marseille, and is often referred to as the "Capital of Gastronomy".
-    </p>
-    <h2>How I learned software development</h2>
-    <p>
-      I started pretty early, when I discovered on my parent's computer that simply instruct the computer to do something was possible.
-      At first I created simple websites with HTML and CSS, they looked terrible but the excitement of seeing something I created on the screen was amazing.
-      My father also introduced me to create electronic circuits with a breadboard and some components, I was fascinated by the idea. And both activities could converge just fine!
-    </p>
-    <p>
-      My studies were pretty chaotic, I started with a scientific baccalaureate, then I went to a preparatory class for engineering schools, which I did not finish.
-      I struggled to find my way, going from a two-year degree in electronics, electrotechnique and embedded systems, to a brief startup experience, but I finally found my way in software development.
-      Beeing a self-taught developer, I learned a lot by following online courses, and working on personal projects. Then the 42 school in Paris was sealing the deal, and helped me reach professional level.
-    </p>
-    </div>
-</body>
-</html>
+    <HomeContent />
+</BasePage>
