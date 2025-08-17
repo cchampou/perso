@@ -34,7 +34,7 @@ function getFormattedDateRange(start, end) {
   }
   .with-logo img {
     width: 64px;
-    height: auto;
+    height: 64px;
     border-radius: 4px;
   }
   .timepoint {
@@ -58,7 +58,7 @@ function getFormattedDateRange(start, end) {
 </div>
 <section>
   <div class="with-logo">
-    {data.logo ? <Image src={data.logo} alt={data.company} width="100" />: ''}
+    {data.logo ? <Image src={data.logo} alt={data.company} width="64" height="64px" />: ''}
     <div>
       <h2>{data.position}</h2>
       <p>
