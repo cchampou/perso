@@ -1,0 +1,32 @@
+{
+  "$ref": "#/definitions/cv",
+  "definitions": {
+    "cv": {
+      "type": "object",
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "company",
+        "position",
+        "start"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

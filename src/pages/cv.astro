@@ -1,0 +1,12 @@
+---
+import BasePage from '../layouts/BasePage.astro';
+import CVEntry from '../components/CVEntry.astro';
+import { getCollection } from 'astro:content';
+
+const cv = await getCollection('cv');
+---
+<BasePage>
+  {cv.map((item) => (
+    <CVEntry data={item.data} key={item.id} />
+  ))}
+</BasePage>

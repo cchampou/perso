@@ -1,0 +1,22 @@
+---
+const { data } = Astro.props;
+console.log('CVEntry data:', data);
+
+function getFormattedDate(date) {
+  return date.toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'short',
+  });
+}
+
+function getFormattedDateRange(start, end) {
+  if (!end || end.toDateString() === new Date().toDateString()) {
+    return `${getFormattedDate(start)} - Present`;
+  }
+  return `${getFormattedDate(start)} - ${getFormattedDate(end)}`;
+}
+---
+<section>
+  <h2>{data.position}</h2>
+  <p><strong>{data.company}</strong> {getFormattedDateRange(data.start, data.end)}</p>
+</section>

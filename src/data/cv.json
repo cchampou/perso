@@ -1,0 +1,16 @@
+[
+  {
+    "company": "Bedrock Streaming",
+    "position": "Frontent developer",
+    "start": "2019-02-01",
+    "end": "2020-02-01",
+    "id": 1
+  },
+  {
+    "company": "Bedrock Streaming",
+    "position": "Lead frontend developer",
+    "start": "2020-02-01",
+    "end": "2021-11-01",
+    "id": 2
+  }
+]
