@@ -1,17 +1,32 @@
 ---
+import { Image } from 'astro:assets';
+import easy from '../assets/easy.png';
+import a400m from '../assets/A400M-night.jpg';
 import BasePage from '../layouts/BasePage.astro';
 ---
 <script is:client>
   function toggleDarkMode() {
     const body = document.body;
     body.classList.toggle('dark-mode');
-    const button = document.querySelector('button');
-    button.textContent = body.classList.contains('dark-mode') ?
-      'Disable Dark Mode' :
-      'Enable Dark Mode';
   }
+document.addEventListener('DOMContentLoaded', () => {
+toggleDarkMode();
+  const h1 = document.querySelector('h1');
+  document.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    h1.style.transform = `translate(-30%, -20%) translateY(${scrollY * 0.5}px)`;
+    h1.style.opacity = 1 - scrollY / 200;
+  });
+  });
 </script>
 <style>
+  @font-face {
+    src: url('/AlumniSansSC-Thin.ttf') format('truetype');
+    font-family: 'AlumniSansSC';
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
   .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -22,10 +37,46 @@ import BasePage from '../layouts/BasePage.astro';
       grid-template-columns: 1fr;
     }
   }
+  :where([data-astro-image]) {
+  object-fit: var(--fit);
+  object-position: var(--pos);
+}
+:where([data-astro-image='full-width']) {
+  width: 100%;
+}
+:where([data-astro-image='constrained']) {
+  max-width: 100%;
+}
+    h1 {
+      font-family: 'AlumniSansSC', sans-serif;
+      top: 20%;
+      left: 30%;
+      transform: translate(-30%, -20%);
+      position: fixed;
+      font-size: 8rem;
+      line-height: 5rem;
+      font-weight: 200;
+    }
+
+#blackout {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 32px);
+  padding: 16px;
+  padding-top: 20vh;
+  z-index: 1;
+}
 </style>
   <BasePage title="Plane Spotting by Clément CHAMPOUILLON" description="I enjoy taking pictures of planes at the airport, especially at Lyon Saint-Exupéry Airport (LFLL).">
-  <h1>Plane Spotting</h1>
-  <p>
+    <Image
+      src={a400m}
+      alt="Airbus A400M"
+      style="position: fixed; right: 0; bottom: 0; width: 100wv; height: 100vh; object-fit: cover; object-position: center; z-index: -1;"
+      fit="cover"
+      layout="full-width"
+    />
+    <h1>Plane<br />&nbsp;Spotting</h1>
+    <div style="height: 75vh"></div>
+    <div id="blackout">
+    <p>
   I am a plane spotter, and I enjoy taking pictures of planes at the airport.
   Because I live in Lyon, France, I often go to <a href="https://en.wikipedia.org/wiki/Lyon-Saint_Exup%C3%A9ry_Airport" target="_blank">Lyon Saint-Exupéry Airport</a> (LFLL).
   </p>
@@ -38,7 +89,6 @@ import BasePage from '../layouts/BasePage.astro';
   <strong>Runways:</strong> 17R/35L (4000m/13,123ft), 17L/35R (2,679m/8,760ft)
   </p>
   <h2>Photos</h2>
-  <button onclick="toggleDarkMode()">Toggle Dark Mode for a better experience!</button>
   <div class="photo-grid">
     <figure>
       <img src="/easy.jpg" alt="Airbus A320" />
@@ -81,4 +131,5 @@ import BasePage from '../layouts/BasePage.astro';
       </figcaption>
     </figure>
   </div>
+    </div>
 </BasePage>
