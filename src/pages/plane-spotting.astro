@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import easy from '../assets/easy.png';
 import a400m from '../assets/A400M-night.jpg';
+import globemaster from '../assets/globemaster.jpg';
 import BasePage from '../layouts/BasePage.astro';
 ---
 <script is:client>
@@ -67,7 +68,7 @@ toggleDarkMode();
 </style>
   <BasePage title="Plane Spotting by Clément CHAMPOUILLON" description="I enjoy taking pictures of planes at the airport, especially at Lyon Saint-Exupéry Airport (LFLL).">
     <Image
-      src={a400m}
+        src={globemaster}
       alt="Airbus A400M"
       style="position: fixed; right: 0; bottom: 0; width: 100wv; height: 100vh; object-fit: cover; object-position: center; z-index: -1;"
       fit="cover"
