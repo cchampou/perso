@@ -2,8 +2,9 @@
 interface Props {
   title: string;
   description?: string;
+  fullWidth?: boolean;
 }
-const { title, description } = Astro.props;
+const { title, description, fullWidth } = Astro.props;
 ---
 <html lang="en">
 <head>
@@ -102,13 +103,17 @@ header a {
 header span {
   font-weight: 200;
 }
+.full-width {
+  max-width: 100vw !important;
+  margin: -16px !important;
+}
 </style>
   </head>
   <body>
     <header>
       <a href="/"><span>Clément</span><br />CHAMPOUILLON</a>
       </header>
-        <div id="content">
+      <div id="content" class={fullWidth ? 'full-width' : undefined}>
           <slot>
           </slot>
         </div>
