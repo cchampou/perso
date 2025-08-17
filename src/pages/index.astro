@@ -1,46 +1,58 @@
 ---
 import SocialButton from '../components/SocialButton.astro';
 import BasePage from '../layouts/BasePage.astro';
-
+import { Image, Picture } from 'astro:assets';
 import HomeContent from '../content/homepage.md';
+import pp from '../assets/pp.webp';
 ---
 <style>
-#hero {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: solid 1px black;
-  padding: 8px;
-  max-width: 400px;
-  margin: 32px auto;
-  font-size: 14px;
-}
-#hero-img {
-  display: flex;
-  flex-grow: 0;
-  flex: 1;
-}
-#hero-text {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-#hero-text p {
-  margin: 0;
-}
-.field {
-  font-weight: bold;
-  margin-right: 4px;
-}
+  #hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    border: solid 1px black;
+    padding: 8px;
+    max-width: 400px;
+    margin: 32px auto;
+    font-size: 14px;
+  }
+  #hero-text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  #hero-text p {
+    margin: 0;
+  }
+  .field {
+    font-weight: bold;
+    margin-right: 4px;
+  }
+  :where([data-astro-image]) {
+    object-fit: var(--fit);
+    object-position: var(--pos);
+  }
+  :where([data-astro-image='full-width']) {
+    width: 100%;
+    height: auto;
+  }
 </style>
 <BasePage 
   title="Clément Champouillon - Software Developer"
   description="Personal website of Clément Champouillon, a software developer based in Lyon, France.">
 <h1>Welcome to my personal website</h1>
 <div id="hero">
-  <div id="hero-img">
-    <img src="/pp.webp" alt="Clément Champouillon" id="hero-img" width="100%"/>
+  <div style="flex: 1;">
+    <Image
+      src={pp}
+      alt="Clément Champouillon"
+      layout="full-width"
+      fit="contain"
+      width={pp.width/4}
+      height={pp.height/4}
+    />
   </div>
   <div id="hero-text">
     <p>
