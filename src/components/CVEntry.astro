@@ -1,4 +1,5 @@
 ---
+import Pin from './Pin.astro';
 const { data } = Astro.props;
 console.log('CVEntry data:', data);
 
@@ -18,5 +19,5 @@ function getFormattedDateRange(start, end) {
 ---
 <section>
   <h2>{data.position}</h2>
-  <p><strong>{data.company}</strong> {getFormattedDateRange(data.start, data.end)}</p>
+  <p><strong>{data.company}</strong> {getFormattedDateRange(data.start, data.end)}, <Pin /> {data.location}</p>
 </section>

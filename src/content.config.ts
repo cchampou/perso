@@ -6,6 +6,7 @@ const cv = defineCollection({
   schema: z.object({
     company: z.string(),
     position: z.string(),
+    location: z.string(),
     start: z.string().transform((str: string) => new Date(str)),
     end: z.string().optional().transform((str: string) => (str ? new Date(str) : undefined)),
   }),

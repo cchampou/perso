@@ -11,6 +11,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <meta name="description" content={description}>
+    <meta name="author" content="Clément CHAMPOUILLON">    
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -29,11 +30,37 @@ const { title, description } = Astro.props;
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-<style>
+<style is:global>
 :root {
   --linkedin-color: #0077B5;
   --github-color: #333;
 }
+  @font-face {
+    font-family: 'NataSans';
+    src: url('/NataSans-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'NataSans';
+    src: url('/NataSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  .no-margin {
+    margin: 0;
+  }
+  figure {
+    max-width: 100%;
+    width: 400px;
+    margin: 16px auto;
+    text-align: center;
+  }
+  figure img {
+    width: 100%;
+  }
+</style>
+<style>
 body {
   font-family: Arial, sans-serif;
   transition: background-color 1s ease-in-out;
@@ -49,23 +76,26 @@ body.dark-mode {
 footer {
   text-align: center;
 }
+header h1 {
+  font-family: 'NataSans', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin: 0;
+  line-height: 1.1rem;
+}
+header h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+header h1 span {
+  font-weight: 200;
+}
 </style>
-<style is:global>
-  .no-margin {
-    margin: 0;
-  }
-  figure {
-    max-width: 100%;
-    width: 400px;
-    margin: 16px auto;
-    text-align: center;
-  }
-  figure img {
-    width: 100%;
-  }
-</style>   <meta name="author" content="Clement CHAMPOUILLON">    
-</head>
-      <body>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/"><span>Clément</span><br />CHAMPOUILLON</a></h1>
+      </header>
         <div id="content">
           <slot>
           </slot>
@@ -73,7 +103,7 @@ footer {
       </body>
       <footer>
         <p>
-          © 2025 Clement Champouillon. All rights reserved.
+          © 2025 Clément Champouillon. All rights reserved.
         </p>
         <p>
         <a href="/sitemap-index.xml">Sitemap</a>
