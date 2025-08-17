@@ -2,6 +2,7 @@
   {
     "company": "Bedrock Streaming",
     "position": "Frontent developer",
+    "logo": "../assets/bedrock_streaming_logo.jpeg",
     "description": "Developed streaming applications for HBBTV, OTT and TV related platforms.",
     "keypoints": [
       "HBBTV application development",
@@ -19,6 +20,7 @@
   {
     "company": "Bedrock Streaming",
     "position": "Lead frontend developer",
+    "logo": "../assets/bedrock_streaming_logo.jpeg",
     "description": "Led the frontend development team, focusing on HBBTV and OTT applications.",
     "keypoints": [
       "Team leadership",
@@ -33,6 +35,7 @@
   {
     "company": "LinkValue",
     "position": "Frontend developer",
+    "logo": "../assets/linkvalue_logo.jpeg",
     "description": "Development of web applications for businesses like selling platforms",
     "keypoints": [
       "React and TypeScript development"
@@ -45,6 +48,7 @@
   {
     "company": "Euronews",
     "position": "Fullstack developer",
+    "logo": "../assets/euronews_logo.svg",
     "description": "Euronews is a European news media company that provides wide range of news content in 16 languages.",
     "keypoints": [
       "Synfony PHP development",
@@ -63,11 +67,10 @@
     "keypoints": [
       "Key decision maker for the technology stack",
       "Leading the development team",
-      "Developing the mobile application",
-      "React Native development",
-      "Backend development with NestJS and TypeScript",
+      "React Native development and backend with NestJS",
       "Cloud infrastructure management with AWS and k8s"
     ],
+    "logo": "../assets/sparted_logo.jpeg",
     "location": "Paris, France",
     "start": "2023-02-01",
     "end": "2024-06-01",
@@ -76,6 +79,7 @@
   {
     "company": "Hivebrite",
     "position": "Mobile developer",
+    "logo": "../assets/hivebrite_logo.jpeg",
     "description": "Hivebrite is a community management platform that helps organizations or universities to build, manage and engage their peers.",
     "keypoints": [
       "React Native development",

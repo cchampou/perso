@@ -1,5 +1,6 @@
 ---
 import Pin from './Pin.astro';
+import { Image } from 'astro:assets';
 const { data } = Astro.props;
 
 function getFormattedDate(date) {
@@ -25,6 +26,17 @@ function getFormattedDateRange(start, end) {
   section {
     margin-left: 16px;
   }
+  .with-logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .with-logo img {
+    width: 64px;
+    height: auto;
+    border-radius: 4px;
+  }
   .timepoint {
     flex-shrink: 0;
     position: relative;
@@ -37,16 +49,24 @@ function getFormattedDateRange(start, end) {
   h2, p, ul {
     margin: 0;
   }
-  p {
-    margin-bottom: 8px;
+  ul {
+    margin-top: 8px;
   }
 </style>
   <div class="entry-container">
 <div class="timepoint">
 </div>
 <section>
-  <h2>{data.position}</h2>
-  <p><strong>{data.company}</strong> {getFormattedDateRange(data.start, data.end)}, <Pin /> {data.location}</p>
+  <div class="with-logo">
+    {data.logo ? <Image src={data.logo} alt={data.company} width="100" />: ''}
+    <div>
+      <h2>{data.position}</h2>
+      <p>
+        <strong>{data.company}</strong> {getFormattedDateRange(data.start, data.end)}<br />
+        <Pin /> {data.location}
+      </p>
+    </div>
+  </div>
     <p>{data.description}</p>
     <ul>
       {data.keypoints?.map((point) => (

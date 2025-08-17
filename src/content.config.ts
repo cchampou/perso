@@ -3,7 +3,7 @@ import { file } from 'astro/loaders';
 
 const cv = defineCollection({
   loader: file('src/data/cv.json'),
-  schema: z.object({
+  schema: ({image}) => z.object({
     company: z.string(),
     position: z.string(),
     location: z.string(),
@@ -11,6 +11,7 @@ const cv = defineCollection({
     end: z.string().optional().transform((str: string) => (str ? new Date(str) : undefined)),
     description: z.string().optional(),
     keypoints: z.array(z.string()).optional(),
+    logo: image().optional(),
   }),
 });
 
