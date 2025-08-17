@@ -1,7 +1,6 @@
 ---
 import Pin from './Pin.astro';
 const { data } = Astro.props;
-console.log('CVEntry data:', data);
 
 function getFormattedDate(date) {
   return date.toLocaleDateString(undefined, {
@@ -17,7 +16,41 @@ function getFormattedDateRange(start, end) {
   return `${getFormattedDate(start)} - ${getFormattedDate(end)}`;
 }
 ---
+<style>
+.entry-container {
+    display: flex;
+    align-items: start;
+    margin-bottom: 16px;
+  }
+  section {
+    margin-left: 16px;
+  }
+  .timepoint {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: #ccc;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%, 50% 50%);
+    top: 8px;
+  }
+  h2, p, ul {
+    margin: 0;
+  }
+  p {
+    margin-bottom: 8px;
+  }
+</style>
+  <div class="entry-container">
+<div class="timepoint">
+</div>
 <section>
   <h2>{data.position}</h2>
   <p><strong>{data.company}</strong> {getFormattedDateRange(data.start, data.end)}, <Pin /> {data.location}</p>
+    <p>{data.description}</p>
+    <ul>
+      {data.keypoints?.map((point) => (
+        <li>{point}</li>
+      ))}
+    </ul>
 </section>
+  </div>

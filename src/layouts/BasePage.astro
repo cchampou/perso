@@ -59,6 +59,16 @@ const { title, description } = Astro.props;
   figure img {
     width: 100%;
   }
+  h1, h2 {
+    font-family: 'NataSans', sans-serif;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 0;
+  }
+  h2 {
+    font-weight: 600;
+    text-align: left;
+  }
 </style>
 <style>
 body {
@@ -76,25 +86,23 @@ body.dark-mode {
 footer {
   text-align: center;
 }
-header h1 {
+header a {
   font-family: 'NataSans', sans-serif;
   font-weight: 600;
   font-size: 1.5em;
   margin: 0;
-  line-height: 1.1rem;
-}
-header h1 a {
+  line-height: 0.6rem;
   text-decoration: none;
   color: inherit;
 }
-header h1 span {
+header span {
   font-weight: 200;
 }
 </style>
   </head>
   <body>
     <header>
-      <h1><a href="/"><span>Clément</span><br />CHAMPOUILLON</a></h1>
+      <a href="/"><span>Clément</span><br />CHAMPOUILLON</a>
       </header>
         <div id="content">
           <slot>

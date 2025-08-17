@@ -2,6 +2,15 @@
   {
     "company": "Bedrock Streaming",
     "position": "Frontent developer",
+    "description": "Developed streaming applications for HBBTV, OTT and TV related platforms.",
+    "keypoints": [
+      "HBBTV application development",
+      "React frontend development",
+      "Video player integration, with support for DRM and ad insertion",
+      "Cross-platform compatibility",
+      "DVB standards compliance",
+      "Unit, integration, and end-to-end testing"
+    ],
     "location": "Lyon, France",
     "start": "2019-02-01",
     "end": "2020-02-01",
@@ -10,9 +19,72 @@
   {
     "company": "Bedrock Streaming",
     "position": "Lead frontend developer",
+    "description": "Led the frontend development team, focusing on HBBTV and OTT applications.",
+    "keypoints": [
+      "Team leadership",
+      "Leading a full remote team",
+      "Plus all keypoints from previous position"
+    ],
     "location": "Lyon, France",
     "start": "2020-02-01",
     "end": "2021-11-01",
     "id": 2
+  },
+  {
+    "company": "LinkValue",
+    "position": "Frontend developer",
+    "description": "Development of web applications for businesses like selling platforms",
+    "keypoints": [
+      "React and TypeScript development"
+    ],
+    "location": "Lyon, France",
+    "start": "2021-11-01",
+    "end": "2022-07-01",
+    "id": 3
+  },
+  {
+    "company": "Euronews",
+    "position": "Fullstack developer",
+    "description": "Euronews is a European news media company that provides wide range of news content in 16 languages.",
+    "keypoints": [
+      "Synfony PHP development",
+      "Frontend integration",
+      "Third parties integration",
+      "Youtube, Dailymotion and JWPlayer integration"
+    ],
+    "location": "Lyon, France",
+    "start": "2022-07-01",
+    "end": "2022-12-01",
+    "id": 4
+  },
+  {
+    "company": "Sparted",
+    "position": "Chief technology officer",
+    "keypoints": [
+      "Key decision maker for the technology stack",
+      "Leading the development team",
+      "Developing the mobile application",
+      "React Native development",
+      "Backend development with NestJS and TypeScript",
+      "Cloud infrastructure management with AWS and k8s"
+    ],
+    "location": "Paris, France",
+    "start": "2023-02-01",
+    "end": "2024-06-01",
+    "id": 5
+  },
+  {
+    "company": "Hivebrite",
+    "position": "Mobile developer",
+    "description": "Hivebrite is a community management platform that helps organizations or universities to build, manage and engage their peers.",
+    "keypoints": [
+      "React Native development",
+      "Cross-platform mobile/web development",
+      "Integration with backend services",
+      "Performance optimization"
+    ],
+    "location": "Paris, France",
+    "start": "2024-07-01",
+    "id": 6
   }
 ]

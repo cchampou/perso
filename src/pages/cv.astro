@@ -5,8 +5,24 @@ import { getCollection } from 'astro:content';
 
 const cv = await getCollection('cv');
 ---
+<style>
+  #timeline {
+    position: relative;
+  }
+  #timebar {
+    height: 100%;
+    width: 1px;
+    background-color: silver;
+    position: absolute;
+    left: 0;
+  }
+</style>
 <BasePage>
-  {cv.map((item) => (
-    <CVEntry data={item.data} key={item.id} />
-  ))}
+  <h1>Curriculum Vitae</h1>
+  <div id="timeline">
+    <div id="timebar"></div>
+    {cv.reverse().map((item) => (
+      <CVEntry data={item.data} key={item.id} />
+    ))}
+  </div>
 </BasePage>

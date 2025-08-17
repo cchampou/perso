@@ -19,6 +19,15 @@
         "end": {
           "type": "string"
         },
+        "description": {
+          "type": "string"
+        },
+        "keypoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "$schema": {
           "type": "string"
         }
