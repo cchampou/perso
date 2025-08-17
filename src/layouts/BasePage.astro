@@ -61,21 +61,23 @@ const { title, description } = Astro.props;
   figure img {
     width: 100%;
   }
+  h1 {
+    line-height: 2rem;
+  }
   h1, h2 {
     font-family: 'NataSans', sans-serif;
     font-weight: 200;
-    text-align: center;
     margin-top: 0;
   }
   h2 {
     font-weight: 600;
-    text-align: left;
   }
 </style>
 <style>
 body {
   font-family: Arial, sans-serif;
   transition: background-color 1s ease-in-out;
+  margin: 16px;
 }
 body.dark-mode {
   background-color: #000;
@@ -83,6 +85,7 @@ body.dark-mode {
 }
 #content {
   margin: auto;
+  margin-top: 32px;
   max-width: 800px;
 }
 footer {
