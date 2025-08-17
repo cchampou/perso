@@ -69,10 +69,14 @@ function copyValueToClipboard(element, value) {
   </div>
   <h2>Email</h2>
   <p>
-    You can contact me by email, either for professional or personal matters.
-    <button onclick="toggleEmail()">
-      Show email
-    </button>
+  You can contact me by email, either for professional or personal matters.<br />
+  <a href="mailto:website@champouillon.com" target="_blank" rel="noopener noreferrer">
+    Click to email me with your email client
+  </a>
+  <br />
+  <a onclick="copyValueToClipboard(this, 'website@champouillon.com')" href="javascript:void(0)">
+    Copy email
+  </a>
   </p>
   <h2>Professional or business inquiries</h2>
   Check out my LinkedIn and contact me there if you want to discuss!
