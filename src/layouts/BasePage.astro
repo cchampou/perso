@@ -93,6 +93,10 @@ body.dark-mode {
 }
 footer {
   text-align: center;
+  margin-top: 32px;
+}
+header {
+  height: 2.4rem;
 }
 header a {
   font-family: 'NataSans', sans-serif;
@@ -115,7 +119,7 @@ header span {
   <body class="dark-mode">
     <header>
       <a href="/"><span>Clément</span><br />CHAMPOUILLON</a>
-      </header>
+    </header>
       <div id="content" class={fullWidth ? 'full-width' : undefined}>
           <slot>
           </slot>
@@ -126,6 +130,8 @@ header span {
           © 2025 Clément Champouillon. All rights reserved.
         </p>
         <p>
-        <a href="/sitemap-index.xml">Sitemap</a>
+          <a href="/sitemap-index.xml">Sitemap</a>
         </p>
+      </footer>
+  </body>
 </html>
