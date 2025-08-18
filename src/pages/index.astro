@@ -1,7 +1,8 @@
 ---
-import SocialButton from '../components/SocialButton.astro';
-import BasePage from '../layouts/BasePage.astro';
 import { Image, Picture } from 'astro:assets';
+
+import Button from '../components/Button.astro';
+import BasePage from '../layouts/BasePage.astro';
 import HomeContent from '../content/homepage.md';
 import pp from '../assets/pp.png';
 ---
@@ -11,7 +12,6 @@ import pp from '../assets/pp.png';
     flex-direction: row;
     align-items: start;
     gap: 8px;
-    border: solid 1px black;
     padding: 8px;
     max-width: 400px;
     margin: 32px auto;
@@ -91,7 +91,9 @@ import pp from '../assets/pp.png';
     </p>
   </div>
 </div>
-<a href="/contact">Check out my contact page to get in touch!</a><br />
-<a href="/cv">View my CV</a>
+<p style="text-align: center;">
+  <Button onClick="window.location.href='/contact'" label="Contact me" />
+  <Button onClick="window.location.href='/cv'" label="CV" />
+</p>
 <HomeContent />
 </BasePage>

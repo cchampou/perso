@@ -53,6 +53,9 @@ const { title, description, fullWidth } = Astro.props;
   .no-margin {
     margin: 0;
   }
+  a {
+    color: inherit;
+  }
   figure {
     margin: 16px auto;
     max-width: 100%;
@@ -80,7 +83,7 @@ body {
   margin: 16px;
 }
 body.dark-mode {
-  background-color: #000;
+  background-color: #121212;
   color: #DEDEDE;
 }
 #content {
@@ -109,7 +112,7 @@ header span {
 }
 </style>
   </head>
-  <body>
+  <body class="dark-mode">
     <header>
       <a href="/"><span>Clément</span><br />CHAMPOUILLON</a>
       </header>

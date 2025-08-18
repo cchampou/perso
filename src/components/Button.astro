@@ -1,0 +1,22 @@
+---
+interface Props {
+  label: string;
+  ariaLabel?: string;
+  onClick?: () => void;
+}
+const { label, onClick, ariaLabel }: Props = Astro.props;
+---
+<style>
+  button {
+    margin: 8px 4px;
+    padding: 8px 16px;
+    background-color: #000;
+    border: solid 1px #fff;
+    color: #fff;
+    cursor: pointer;
+  }
+</style>
+<button onclick={onClick} aria-label={ariaLabel} class="button">
+  {label}
+</button>
+

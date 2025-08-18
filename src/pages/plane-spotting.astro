@@ -6,17 +6,12 @@ import globemaster from '../assets/globemaster.jpg';
 import BasePage from '../layouts/BasePage.astro';
 ---
 <script is:client>
-  function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle('dark-mode');
-  }
 document.addEventListener('DOMContentLoaded', () => {
-toggleDarkMode();
   const h1 = document.querySelector('h1');
   document.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    h1.style.transform = `translate(-30%, -20%) translateY(${scrollY * 0.5}px)`;
-    h1.style.opacity = 1 - scrollY / 200;
+    h1.style.transform = `translateX(-30%) translateY(-${scrollY * 0.2}px)`;
+    h1.style.opacity = 1 - scrollY / 250;
   });
   });
 </script>
@@ -50,9 +45,9 @@ toggleDarkMode();
 }
     h1 {
       font-family: 'AlumniSansSC', sans-serif;
-      top: 30%;
+      top: 20%;
       left: 30%;
-      transform: translate(-30%, -30%);
+      transform: translateX(-30%);
       position: fixed;
       font-size: 8rem;
       line-height: 5rem;
