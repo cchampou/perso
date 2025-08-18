@@ -3,8 +3,9 @@ interface Props {
   title: string;
   description?: string;
   fullWidth?: boolean;
+  darkMode?: boolean;
 }
-const { title, description, fullWidth } = Astro.props;
+const { title, description, fullWidth, darkMode } = Astro.props;
 ---
 <html lang="en">
 <head>
@@ -36,6 +37,9 @@ const { title, description, fullWidth } = Astro.props;
   --linkedin-color: #0077B5;
   --github-color: #333;
 }
+  p {
+    line-height: 1.6;
+  }
   @font-face {
     font-family: 'NataSans';
     src: url('/NataSans-Light.ttf') format('truetype');
@@ -116,7 +120,7 @@ header span {
 }
 </style>
   </head>
-  <body class="dark-mode">
+  <body class={darkMode ? 'dark-mode' : undefined}>
     <header>
       <a href="/"><span>Clément</span><br />CHAMPOUILLON</a>
     </header>
