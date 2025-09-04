@@ -1,6 +1,6 @@
 {
   "name": "perso",
-  "packageManager": "yarn@4.9.1",
+  "packageManager": "yarn@4.9.4",
   "dependencies": {
     "@astrojs/sitemap": "^3.5.1",
     "astro": "^5.13.5",

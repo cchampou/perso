@@ -4,49 +4,44 @@
     "cv": {
       "type": "object",
       "properties": {
+        "company": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "keypoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "logo": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }
       },
-      "additionalProperties": {
-        "type": "object",
-        "properties": {
-          "company": {
-            "type": "string"
-          },
-          "position": {
-            "type": "string"
-          },
-          "location": {
-            "type": "string"
-          },
-          "start": {
-            "type": "string"
-          },
-          "end": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "keypoints": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "logo": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "company",
-          "position",
-          "location",
-          "start"
-        ],
-        "additionalProperties": false
-      }
+      "required": [
+        "company",
+        "position",
+        "location",
+        "start"
+      ],
+      "additionalProperties": false
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#"
