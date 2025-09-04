@@ -6,6 +6,7 @@ interface Props {
   darkMode?: boolean;
 }
 const { title, description, fullWidth, darkMode } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <html lang="en">
 <head>
@@ -32,6 +33,7 @@ const { title, description, fullWidth, darkMode } = Astro.props;
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href={canonicalURL} />
 <style is:global>
 :root {
   --linkedin-color: #0077B5;
