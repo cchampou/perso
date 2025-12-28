@@ -2,8 +2,8 @@
   "name": "perso",
   "packageManager": "yarn@4.9.4",
   "dependencies": {
-    "@astrojs/sitemap": "^3.5.1",
-    "astro": "^5.13.5",
+    "@astrojs/sitemap": "3.6.0",
+    "astro": "5.16.6",
     "sharp": "^0.34.3"
   },
   "scripts": {
