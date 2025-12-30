@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import BasePage from "../layouts/BasePage.astro";
+
+const posts = await getCollection("blog");
+---
+
+<BasePage title="Blog" description="Blog of Clément Champouillon">
+  <div>
+    {
+      posts.map((item) => (
+        <a href={`/blog/${item.id}`}>
+          <article>
+            <h2>{item.data.title}</h2>
+            <p>{item.data.date.toLocaleDateString()}</p>
+          </article>
+        </a>
+      ))
+    }
+  </div>
+</BasePage>

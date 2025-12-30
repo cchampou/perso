@@ -1,11 +1,12 @@
 ---
-import { Image, Picture } from 'astro:assets';
+import { Image, Picture } from "astro:assets";
 
-import Button from '../components/Button.astro';
-import BasePage from '../layouts/BasePage.astro';
-import HomeContent from '../content/homepage.md';
-import pp from '../assets/pp.png';
+import Button from "../components/Button.astro";
+import BasePage from "../layouts/BasePage.astro";
+import HomeContent from "../content/homepage.md";
+import pp from "../assets/pp.png";
 ---
+
 <style>
   #hero {
     display: flex;
@@ -34,66 +35,72 @@ import pp from '../assets/pp.png';
     object-fit: var(--fit);
     object-position: var(--pos);
   }
-  :where([data-astro-image='full-width']) {
+  :where([data-astro-image="full-width"]) {
     width: 100%;
     height: auto;
   }
 </style>
-<BasePage 
+<BasePage
   title="Clément Champouillon - Software Developer"
-  description="Personal website of Clément Champouillon, a software developer based in Lyon, France.">
-<h1>Welcome to my personal website</h1>
-<div id="hero">
-  <div style="flex: 1;">
-    <Image
-      src={pp}
-      alt="Clément Champouillon"
-      layout="full-width"
-      fit="contain"
-    />
+  description="Personal website of Clément Champouillon, a software developer based in Lyon, France."
+>
+  <h1>Welcome to my personal website</h1>
+  <div id="hero">
+    <div style="flex: 1;">
+      <Image
+        src={pp}
+        alt="Clément Champouillon"
+        layout="full-width"
+        fit="contain"
+      />
+    </div>
+    <div id="hero-text">
+      <p>
+        <span class="field">Name</span>
+        <span>Clément Champouillon</span>
+      </p>
+      <p>
+        <span class="field">Birthday</span>
+        <span>15th September</span>
+      </p>
+      <p>
+        <span class="field">Nationality</span>
+        <span>French</span>
+      </p>
+      <p>
+        <span class="field">Location</span>
+        <a href="#where-i-live">Lyon, France</a>
+      </p>
+      <p>
+        <span class="field">Languages</span>
+        <span>french, english, german</span>
+      </p>
+      <p>
+        <span class="field">Studies</span>
+        <a href="#how-i-learned-software-development"
+          >a mess, but led me to software development</a
+        >
+      </p>
+      <p>
+        <span class="field">Profession</span>
+        <a href="#what-i-do">software developer</a>
+      </p>
+      <p>
+        <span class="field">Volunteer activities</span>
+        <a href="#">first aid</a>
+      </p>
+      <p>
+        <span class="field">Hobbies</span>
+        programming, electronics, sailing, traveling, photography, <a
+          href="plane-spotting">plane spotting</a
+        >, sport
+      </p>
+    </div>
   </div>
-  <div id="hero-text">
-    <p>
-      <span class="field">Name</span>
-      <span>Clément Champouillon</span>
-    </p>
-    <p>
-      <span class="field">Birthday</span>
-      <span>15th September</span>
-    </p>
-    <p>
-      <span class="field">Nationality</span>
-      <span>French</span>
-    </p>
-    <p>
-      <span class="field">Location</span>
-      <a href="#where-i-live">Lyon, France</a>
-    </p>
-    <p>
-      <span class="field">Languages</span>
-      <span >french, english, german</span>
-    </p>
-    <p>
-      <span class="field">Studies</span>
-      <a href="#how-i-learned-software-development">a mess, but led me to software development</a>
-    </p>
-    <p>
-      <span class="field">Profession</span>
-      <a href="#what-i-do">software developer</a>
-    </p>
-    <p>
-      <span class="field">Volunteer activities</span>
-      <a href="#">first aid</a>
-    </p>
-    <p>
-      <span class="field">Hobbies</span>
-      programming, electronics, sailing, traveling, photography, <a href="plane-spotting">plane spotting</a>, sport
-    </p>
-  </div>
-</div>
-<p style="text-align: center;">
-  <Button onClick="window.location.href='/contact'" label="Contact me" />
-  <Button onClick="window.location.href='/cv'" label="CV" />
-</p>
-<HomeContent />
+  <p style="text-align: center;">
+    <Button onClick="window.location.href='/blog'" label="Blog" />
+    <Button onClick="window.location.href='/contact'" label="Contact me" />
+    <Button onClick="window.location.href='/cv'" label="CV" />
+  </p>
+  <HomeContent />
 </BasePage>
