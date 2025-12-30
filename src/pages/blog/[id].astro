@@ -18,8 +18,8 @@ const { Content } = await render(post);
   {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    "headline": `${post.data.title}`,
-    "datePublished": `${post.data.date.toISOString()}`,
+    "headline": post.data.title,
+    "datePublished": post.data.date.toISOString(),
     "author": [
       {
         "@type": "Person",
