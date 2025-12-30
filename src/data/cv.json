@@ -37,9 +37,7 @@
     "position": "Frontend developer",
     "logo": "../assets/linkvalue_logo.jpeg",
     "description": "Development of web applications for businesses like selling platforms",
-    "keypoints": [
-      "React and TypeScript development"
-    ],
+    "keypoints": ["React and TypeScript development"],
     "location": "Lyon, France",
     "start": "2021-11-01",
     "end": "2022-07-01",
@@ -90,5 +88,15 @@
     "location": "Paris, France",
     "start": "2024-07-01",
     "id": 6
+  },
+  {
+    "company": "Komia",
+    "position": "Chief technology officer",
+    "logo": "../assets/komia.png",
+    "description": "Komia provides all-in-one software solutions for restaurants and hotels",
+    "keypoints": ["React Native development", "Google Cloud Platform"],
+    "location": "Lyon, France",
+    "start": "2024-07-01",
+    "id": 7
   }
 ]
