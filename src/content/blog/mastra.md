@@ -1,14 +1,12 @@
 ---
-title: Mastra, the AI framework that helped me understand AI agents
+title: Mastra, how a TypeScript AI framework clarified agents for me
 date: 2025-12-30
 ---
 
-I've heard about Mastra just by scrolling through my GitHub feed. Coincidence or not, most of the best open-source
-tools I discovered were coming from my GitHub feed. I think the power of such feed is largely underrated: you just get
-to see what your network is working on, what they discover, what they contribute to, and with absolutely no
-bullshit text along the relevant information. It's just facts.
+I discovered Mastra through my GitHub feed, a reminder of how curated technical networks surface relevant tools without noise.
+For developers, this is where real discovery happens: raw signals from peers, free of marketing fluff. It's just facts.
 
-## What catched my attention
+## What caught my attention
 
 > Build agents with a modern TypeScript stack
 
@@ -26,14 +24,13 @@ getting familiar with a new topic. Forget about the syntax, use the appropriate 
 Last but not least, and because I've first seen it in my GitHub feed: it's **open-source**. I love open-source. I bet you
 too.
 
-## Getting started, it takes litterally 2 minutes
+## Getting started, it takes literally 2 minutes
 
 Initialising a mastra codebase has been made super easy with just a starter command, plus a bunch of templates you can
 choose from!
 
 With this command executed, you get a pretty simple folder architecture, and some key files every Typescript developer
 is already familiar with: `package.json`, `tsconfig.json`, `.env.example`...
-Nothing fancy.
 
 ## Discovering Studio UI
 
@@ -75,19 +72,19 @@ tools, see the input and output of each call and so on!
 For complex tasks involving multiple tools or agents, you can create workflows. Workflows basically allow to have one tool (or agent) called
 after another, which each step responsible for a defined task.
 
-## Connect infrastucture
+## Connect infrastructure
 
 You can add super-powers to your AI just by giving it some infrastructure resources. Within minutes you can give your agents a memory, that means
 that your agent will remember previous messages in the conversation, to potentially fine-tune the upcoming answers. If you add another adapter,
 you can get your agent to share a memory across several conversations.
 
-Overall many of the advanced features (e.g., memory, RAG) of Mastra require you connect a database, so make yourself a favor and write a small `compose.yaml` file
+Overall many of the advanced features (e.g., memory, RAG) of Mastra require you connect a database, so make yourself a favor and write a small `compose.yml` file
 so you can have a confined database ready to serve your local environnement.
 
 ```yaml
 services:
   db:
-    image: postgres:18
+    image: postgres:16
     ports:
       - "5432:5432"
 ```
@@ -95,14 +92,14 @@ services:
 ## I understood RAG (Retrieval-Augmented Generation)
 
 Now that I'm completely trapped into the rabbit hole, I'm curious to test some of the unknown and most advanced features. I went back to the
-documetation, clicked a random tab in the side navigation panel and picked... RAG.
+documentation, clicked a random tab in the side navigation panel and picked... RAG.
 
 I first read a bit of theory about this topic to understand what this is all about before testing it. I will try to make rapid explaination here:
 RAG uses non-specialist AI models to answer very specific questions using additionnal knowledge taken from resources like text documents.
-The benefits of this technique is that your AI will be able to answer based on documents that have never been used to train publc AI models, let's say
+The benefits of this technique is that your AI will be able to answer based on documents that have never been used to train public AI models, let's say
 for example your product documentation.
 
-it's a multiple steps process that involves **parsing some documents**, **spliting it**, **embedding it**, **storing verctors** and **make them accessible** to an LLM.
+it's a multiple steps process that involves **parsing some documents**, **splitting it**, **embedding it**, **storing vectors** and **make them accessible** to an LLM.
 In other terms, that means:
 
 - Read some input documents with an appropriate parser (let's say your documenation in markdown)
@@ -116,7 +113,7 @@ my agent felt way more talented... 😜
 
 ## Road to production
 
-Now the obvious question that comes after days of messing around with the codebase and Studio is: how do I host this thing and how do I connect it to my project?
+Now the obvious question that comes after days of experimenting with the codebase and Studio is: how do I host this thing and how do I connect it to my project?
 Once more Mastra got you covered with a bunch of options to choose from:
 
 - Mastra Cloud (the commercial offer)
@@ -130,10 +127,10 @@ frontend codebase is in Typescript, they provide a client to simplify interactio
 
 ## Why you should try
 
-If like me you don't want to lag behind the market and what to strengthen your AI understanding and skillset, it's a perfect sandbox. There is a whole bunch of
+If like me you don't want to lag behind the market and want to strengthen your AI understanding and skillset, it's a perfect sandbox. There is a whole bunch of
 use-cases that emerge from the experiments you can do with Mastra. **It's a fun way of learning**.
 
-And if you accidentally create the perfect solution to a problem with this framework (I wish you will), then you will be lucky enough to have a production ready solution,
+And if you accidentally create the perfect solution to a problem with this framework (you might), then you will be lucky enough to have a production ready solution,
 backed by talented open-source contributors: the team behind Mastra is also responsible for the success of Gatsby, the frontend framework.
 
 **Stay tuned, Mastra 1.0 is going live in January 2026**
