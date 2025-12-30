@@ -102,7 +102,7 @@ for example your product documentation.
 it's a multiple steps process that involves **parsing some documents**, **splitting it**, **embedding it**, **storing vectors** and **make them accessible** to an LLM.
 In other terms, that means:
 
-- Read some input documents with an appropriate parser (let's say your documenation in markdown)
+- Read some input documents with an appropriate parser (let's say your documentation in markdown)
 - Make small chunks out of it (can be a group of words, a number of letter, a paragraph...)
 - Transform chunks into vectors: that's called embeddings
 - Store the vector into a vector database (if you like postgres, there is a pgVector adapter)
