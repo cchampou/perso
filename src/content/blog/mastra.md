@@ -1,7 +1,7 @@
 ---
 title: The TypeScript AI framework that clarified agents for me
 description: The discovery of Mastra, an open-source AI framework, changed my perspective on AI agents.
-cover: "./mastra.png"
+cover: "./images/mastra.png"
 date: 2025-12-30
 ---
 
