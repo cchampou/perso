@@ -1,5 +1,6 @@
 ---
 title: Mastra, how a TypeScript AI framework clarified agents for me
+cover: "./mastra.png"
 date: 2025-12-30
 ---
 

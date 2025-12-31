@@ -1,18 +1,69 @@
 ---
 import { getCollection } from "astro:content";
 import BasePage from "../layouts/BasePage.astro";
+import { Image } from "astro:assets";
 
 const posts = await getCollection("blog");
 ---
 
+<style>
+  article {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    border: solid 1px black;
+    border-width: 1px 0 0 0;
+  }
+
+  article h2 {
+    margin: 0.5rem 0;
+    line-height: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  article span {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 450px) {
+    article {
+      flex-direction: column;
+      border-width: 0 0 0 1px;
+    }
+
+    article div:nth-child(2) {
+      padding-left: 16px;
+    }
+  }
+</style>
+
 <BasePage title="Blog" description="Blog of Clément Champouillon">
+  <h1>Blog</h1>
   <div>
     {
       posts.map((item) => (
         <a href={`/blog/${item.id}`}>
           <article>
-            <h2>{item.data.title}</h2>
-            <p>{item.data.date.toLocaleDateString()}</p>
+            <div>
+              <Image
+                src={item.data.cover}
+                alt={item.data.title}
+                layout="constrained"
+                height={100}
+                width={400}
+                fit="cover"
+                position="center"
+              />
+            </div>
+            <div>
+              <h2>{item.data.title}</h2>
+              <span>{item.data.date.toLocaleDateString()}</span>
+            </div>
           </article>
         </a>
       ))

@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import BasePage from "../../layouts/BasePage.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -23,6 +24,7 @@ const structuredData = {
   datePublished: post.data.date.toISOString(),
   dateModified: post.data.updatedAt?.toISOString() ?? undefined,
   url: pageUrl,
+  image: [post.data.cover],
   author: {
     "@type": "Person",
     name: "Clément Champouillon",
@@ -34,6 +36,13 @@ const structuredData = {
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 <BasePage title={post.data.title} description={post.data.description}>
   <h1>{post.data.title}</h1>
+  <Image
+    src={post.data.cover}
+    alt={post.data.title}
+    layout="constrained"
+    height={200}
+    width={1600}
+  />
   <p>{post.data.date.toLocaleDateString()}</p>
   <Content />
 </BasePage>
