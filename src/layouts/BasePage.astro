@@ -2,13 +2,14 @@
 interface Props {
   title: string;
   description?: string;
+  image?: string;
   fullWidth?: boolean;
   darkMode?: boolean;
 }
 import { Image } from "astro:assets";
 import keyboardImage from "../assets/keyboard.png";
 
-const { title, description, fullWidth, darkMode } = Astro.props;
+const { title, description, image, fullWidth, darkMode } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -18,8 +19,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={description} />
     <meta name="author" content="Clément CHAMPOUILLON" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    {image && <meta property="og:image" content={image} />}
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />

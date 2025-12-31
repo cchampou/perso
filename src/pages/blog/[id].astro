@@ -34,7 +34,11 @@ const structuredData = {
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-<BasePage title={post.data.title} description={post.data.description}>
+<BasePage
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.cover}
+>
   <h1>{post.data.title}</h1>
   <Image
     src={post.data.cover}
