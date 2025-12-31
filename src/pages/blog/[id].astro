@@ -31,13 +31,15 @@ const structuredData = {
     url: "https://clement.champouillon.com",
   },
 };
+
+const imageUrl = new URL(post.data.cover.src, Astro.site);
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 <BasePage
   title={post.data.title}
   description={post.data.description}
-  image={post.data.cover.src}
+  image={imageUrl.toString()}
 >
   <h1>{post.data.title}</h1>
   <Image
