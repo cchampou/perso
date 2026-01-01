@@ -191,7 +191,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <body class={darkMode ? "dark-mode" : undefined}>
     <header>
       <a href="/">
-        <Image src={keyboardImage} alt="Keyboard logo" height="64" />
+        <Image
+          src={keyboardImage}
+          alt="Keyboard logo"
+          style={{
+            width: "64px",
+          }}
+        />
       </a>
     </header>
     <div id="content" class={fullWidth ? "full-width" : undefined}>

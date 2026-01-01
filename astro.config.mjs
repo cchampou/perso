@@ -13,4 +13,10 @@ export default defineConfig({
       lastmod: new Date(),
     })
   ],
+  image: {
+    responsiveStyles: true,
+    layout: "full-width",
+    objectFit: "cover",
+    objectPosition: "center",
+  }
 });

@@ -2,33 +2,35 @@
 title: The TypeScript AI framework that clarified agents for me
 description: The discovery of Mastra, an open-source AI framework, changed my perspective on AI agents.
 cover: "./images/mastra.png"
-date: 2025-12-30
+date: 2026-01-01
 ---
 
-I discovered Mastra through my GitHub feed, a reminder of how curated technical networks surface relevant tools without noise.
+I discovered [Mastra](https://www.mastra.ai/) through my [GitHub](https://github.com) feed, a reminder of how curated technical networks surface relevant tools without noise.
 For developers, this is where real discovery happens: raw signals from peers, free of marketing fluff. It's just facts.
 
 ## What caught my attention
 
 > Build agents with a modern TypeScript stack
 
-_☝️ Mastra's homepage headline_
+_☝️ [Mastra's homepage](https://www.mastra.ai/) headline_
+
+![Mastra's homepage](./images/mastra-homepage.png)
 
 The most obvious is the keyword **agents**, **AI agents**. Everybody wants to be onboard the AI train, including myself, and although I
 am carefully trying not to fall into the trend trap, I also want to learn more about what is effectively becoming the
 biggest revolution since Internet was invented.
 
-Besides AI, it's **Typescript**. I am myself coming from a frontend developer background, learned Typescript, and still
+Besides AI, it's **Typescript**. I am myself coming from a frontend developer background, learned [Typescript](https://www.typescriptlang.org/), and still
 to date use it everyday. What's obviously convinient when you become an expert with one programing language is that you
 almost don't have to think to actually program what you have in mind. And that becomes very convinient when you are
 getting familiar with a new topic. Forget about the syntax, use the appropriate tooling, refactor in no time...
 
-Last but not least, and because I've first seen it in my GitHub feed: it's **open-source**. I love open-source. I bet you
+Last but not least, and because I've first seen it in my [GitHub](https://github.com) feed: it's **open-source**. I love open-source. I bet you
 too.
 
 ## Getting started, it takes literally 2 minutes
 
-Initialising a mastra codebase has been made super easy with just a starter command, plus a bunch of templates you can
+Initialising a [Mastra](https://www.mastra.ai/) codebase has been made super easy with just a starter command, plus a bunch of templates you can
 choose from!
 
 With this command executed, you get a pretty simple folder architecture, and some key files every Typescript developer
@@ -36,11 +38,13 @@ is already familiar with: `package.json`, `tsconfig.json`, `.env.example`...
 
 ## Discovering Studio UI
 
-Studio UI is an amazing frontend application that comes with Mastra. It's representing every entity you built in your
+Studio UI is an amazing frontend application that comes with [Mastra](https://www.mastra.ai/). It's representing every entity you built in your
 codebase, like a **tool**, an **agent**, a **workflow**, and even the infrastucture connections you made.
 
-I started easy by just creating an agent with no capabilities but chat with me. I used a Mistral API key, followed the
-Mastra documentation to configure the bare minimum agent, and the magic happened ✨. Using Studio, I was able to create
+![Mastra Studio UI](./images/mastra-studio.png)
+
+I started easy by just creating an agent with no capabilities but chat with me. I used a [Mistral](https://mistral.ai/) API key, followed the
+[Mastra](https://www.mastra.ai/) documentation to configure the bare minimum agent, and the magic happened ✨. Using Studio, I was able to create
 a new conversation with my agent. Immediately after my conversation I started to **customize the "system prompt"** of my
 agent, meaning the initial instructions my agent is given before any conversation starts.
 
@@ -57,7 +61,7 @@ connect some mainstream tools like your calendar, your emails, your source code 
 for an access to a web interface to chat and play around with models are well underpriced. That means, they
 benefit from your daily usage of such tool (your data, the feedbacks you make...).**
 
-Disclaimer done. Now what brings Mastra if you can already create agents only? I continued my exploration by **creating a tool**.
+Disclaimer done. Now what brings [Mastra](https://www.mastra.ai/) if you can already create agents only? I continued my exploration by **creating a tool**.
 A tool is a interface to and from another program. **It's basically a side effect**. There are input and output data to almost any
 tool, validated by a schema. I decided to create tools to interact with a backend of a todo list sandbox project, so that my agent
 can manage for me this list.
@@ -80,8 +84,7 @@ You can add super-powers to your AI just by giving it some infrastructure resour
 that your agent will remember previous messages in the conversation, to potentially fine-tune the upcoming answers. If you add another adapter,
 you can get your agent to share a memory across several conversations.
 
-Overall many of the advanced features (e.g., memory, RAG) of Mastra require you connect a database, so make yourself a favor and write a small `compose.yml` file
-so you can have a confined database ready to serve your local environnement.
+Overall many of the advanced features (e.g., memory, RAG) of [Mastra](https://www.mastra.ai/) require you to connect a database, so do yourself a favor and write a small [Docker](https://www.docker.com/) `compose.yml` file to have a confined database ready to serve your local environment.
 
 ```yaml
 services:
@@ -116,23 +119,23 @@ my agent felt way more talented... 😜
 ## Road to production
 
 Now the obvious question that comes after days of experimenting with the codebase and Studio is: how do I host this thing and how do I connect it to my project?
-Once more Mastra got you covered with a bunch of options to choose from:
+Once more [Mastra](https://www.mastra.ai/) got you covered with a bunch of options to choose from:
 
 - Mastra Cloud (the commercial offer)
 - Integration with another framework like Next.js or Astro
 - Serverless deployment
 - Custom server deployment
 
-About this last option: Mastra provides a ready to use HTTP API that allows to call each one of the tools, agents, workflows - and generally spoken entities - you created in
-your Mastra codebase. That means you can from your mobile app for example with just one HTTP call talk to your custom agent. And to make things even simpler, if your
-frontend codebase is in Typescript, they provide a client to simplify interactions with the server.
+About this last option: [Mastra](https://www.mastra.ai/) provides a ready to use HTTP API that allows to call each one of the tools, agents, workflows - and generally spoken entities - you created in
+your [Mastra](https://www.mastra.ai/) codebase. That means you can from your mobile app for example with just one HTTP call talk to your custom agent. And to make things even simpler, if your
+frontend codebase is in Typescript, [Mastra](https://www.mastra.ai/) provides a client to simplify interactions with the server.
 
 ## Why you should try
 
 If like me you don't want to lag behind the market and want to strengthen your AI understanding and skillset, it's a perfect sandbox. There is a whole bunch of
-use-cases that emerge from the experiments you can do with Mastra. **It's a fun way of learning**.
+use-cases that emerge from the experiments you can do with [Mastra](https://www.mastra.ai/). **It's a fun way of learning**.
 
 And if you accidentally create the perfect solution to a problem with this framework (you might), then you will be lucky enough to have a production ready solution,
-backed by talented open-source contributors: the team behind Mastra is also responsible for the success of Gatsby, the frontend framework.
+backed by talented open-source contributors: the team behind [Mastra](https://www.mastra.ai/) is also responsible for the success of [Gatsby](https://www.gatsbyjs.com/), the frontend framework.
 
 **Stay tuned, Mastra 1.0 is going live in January 2026**
