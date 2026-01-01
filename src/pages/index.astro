@@ -9,13 +9,11 @@ import pp from "../assets/pp.png";
 
 <style>
   #hero {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
     padding: 8px;
-    margin: 32px auto;
     font-size: 14px;
+    border: solid 1px var(--borderColor);
+    border-radius: var(--borderRadius);
+    max-width: 400px;
   }
   @media (max-width: 768px) {
     #hero {
@@ -23,8 +21,6 @@ import pp from "../assets/pp.png";
     }
   }
   #hero-text {
-    border: solid 1px var(--borderColor);
-    border-radius: var(--borderRadius);
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -51,60 +47,40 @@ import pp from "../assets/pp.png";
   title="Clément Champouillon - Software Developer"
   description="Personal website of Clément Champouillon, a software developer based in Lyon, France."
 >
-  <h1>Welcome to my personal website</h1>
-  <div id="hero">
-    <div style="flex: 0 0 auto;">
-      <Image
-        src={pp}
-        alt="Clément Champouillon"
-        style="width: 128px; border-radius: 50%; aspect-ratio: 1 / 1; object-fit: cover; object-position: top; border: 2px solid var(--borderColor);"
-      />
+  <div style="display: flex; flex-direction: row; gap: 32px;">
+    <div id="hero">
+      <div style="text-align: center;">
+        <Image
+          src={pp}
+          alt="Clément Champouillon"
+          style="width: 128px; border-radius: 50%; margin: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: top; border: 2px solid var(--borderColor);"
+        />
+      </div>
+      <h1>Clément Champouillon</h1>
+      <span class="field">🎂</span>
+      <span>15th September</span><br />
+      <span class="field">📍</span>
+      Lyon, France<br />
+      <span class="field">🗣️</span>
+      <span>french, english, german</span><br />
+      <span class="field">🎓</span>
+      a mess, but led me to software development<br />
+      <span class="field">💼</span>
+      software developer<br />
+      <span class="field">🫂</span>
+      first aid<br />
+      <span class="field">📸</span>
+      programming, electronics, sailing, traveling, photography, <a
+        href="plane-spotting">plane spotting</a
+      >, sport
+      <p style="text-align: center;">
+        <Button onClick="window.location.href='/blog'" label="Blog" />
+        <Button onClick="window.location.href='/contact'" label="Contact me" />
+        <Button onClick="window.location.href='/cv'" label="CV" />
+      </p>
     </div>
-    <div id="hero-text">
-      <p>
-        <span class="field">Name:</span>
-        <span>Clément Champouillon</span>
-      </p>
-      <p>
-        <span class="field">Birthday:</span>
-        <span>15th September</span>
-      </p>
-      <p>
-        <span class="field">Nationality:</span>
-        <span>French</span>
-      </p>
-      <p>
-        <span class="field">Location:</span>
-        Lyon, France
-      </p>
-      <p>
-        <span class="field">Languages:</span>
-        <span>french, english, german</span>
-      </p>
-      <p>
-        <span class="field">Studies:</span>
-        a mess, but led me to software development
-      </p>
-      <p>
-        <span class="field">Profession:</span>
-        software developer
-      </p>
-      <p>
-        <span class="field">Volunteer activities:</span>
-        first aid
-      </p>
-      <p>
-        <span class="field">Hobbies:</span>
-        programming, electronics, sailing, traveling, photography, <a
-          href="plane-spotting">plane spotting</a
-        >, sport
-      </p>
+    <div>
+      <HomeContent />
     </div>
   </div>
-  <p style="text-align: center;">
-    <Button onClick="window.location.href='/blog'" label="Blog" />
-    <Button onClick="window.location.href='/contact'" label="Contact me" />
-    <Button onClick="window.location.href='/cv'" label="CV" />
-  </p>
-  <HomeContent />
 </BasePage>

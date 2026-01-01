@@ -42,6 +42,7 @@ const imageUrl = new URL(post.data.cover.src, Astro.site);
   image={imageUrl.toString()}
 >
   <h1>{post.data.title}</h1>
+  <p>{post.data.date.toLocaleDateString()}</p>
   <Image
     src={post.data.cover}
     alt={post.data.title}
@@ -49,6 +50,5 @@ const imageUrl = new URL(post.data.cover.src, Astro.site);
     height={200}
     width={1600}
   />
-  <p>{post.data.date.toLocaleDateString()}</p>
   <Content />
 </BasePage>
