@@ -1,7 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
+import Cake from "./icons/Cake.astro";
+import Location from "./icons/Location.astro";
 import pp from "../assets/pp.png";
+import Studies from "./icons/Studies.astro";
+import Speech from "./icons/Speech.astro";
+import Desk from "./icons/Desk.astro";
+import Ambulance from "./icons/Ambulance.astro";
+import Camera from "./icons/Camera.astro";
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -44,16 +52,27 @@ const structuredData = {
 
 <style>
   #hero {
-    padding: 8px;
+    padding: 16px;
     font-size: 14px;
     border: solid 1px var(--borderColor);
     border-radius: var(--borderRadius);
-    max-width: 400px;
+    max-width: 250px;
+    gap: 8px;
+    flex-direction: column;
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
   }
   @media (max-width: 768px) {
     #hero {
       flex-direction: column;
     }
+  }
+
+  .field {
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 </style>
 
@@ -66,22 +85,16 @@ const structuredData = {
     />
   </div>
   <h1>Clément Champouillon</h1>
-  <span class="field">🎂</span>
-  <span>15th September</span><br />
-  <span class="field">📍</span>
-  Lyon, France<br />
-  <span class="field">🗣️</span>
-  <span>french, english, german</span><br />
-  <span class="field">🎓</span>
-  a mess, but led me to software development<br />
-  <span class="field">💼</span>
-  software developer<br />
-  <span class="field">🫂</span>
-  first aid<br />
-  <span class="field">📸</span>
-  programming, electronics, sailing, traveling, photography, <a
-    href="plane-spotting">plane spotting</a
-  >, sport
+  <span class="field">
+    <Cake size={24} />
+    15th September
+  </span>
+  <span class="field"><Location size={24} />Lyon, France</span>
+  <span class="field"><Speech size={24} />French, English, German</span>
+  <span class="field"><Studies size={24} />42 School</span>
+  <span class="field"><Desk size={24} />Software Engineer</span>
+  <span class="field"><Ambulance size={24} />First aid</span>
+  <span class="field"><Camera size={24} />Plane spotting</span>
   <p style="text-align: center;">
     <Button onClick="window.location.href='/blog'" label="Blog" />
     <Button onClick="window.location.href='/contact'" label="Contact me" />
