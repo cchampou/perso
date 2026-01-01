@@ -11,18 +11,25 @@ import pp from "../assets/pp.png";
   #hero {
     display: flex;
     flex-direction: row;
-    align-items: start;
-    gap: 8px;
+    align-items: center;
+    gap: 16px;
     padding: 8px;
-    max-width: 400px;
     margin: 32px auto;
     font-size: 14px;
   }
+  @media (max-width: 768px) {
+    #hero {
+      flex-direction: column;
+    }
+  }
   #hero-text {
+    border: solid 1px var(--borderColor);
+    border-radius: var(--borderRadius);
     flex: 2;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    padding: 16px;
   }
   #hero-text p {
     margin: 0;
@@ -46,51 +53,48 @@ import pp from "../assets/pp.png";
 >
   <h1>Welcome to my personal website</h1>
   <div id="hero">
-    <div style="flex: 1;">
+    <div style="flex: 0 0 auto;">
       <Image
         src={pp}
         alt="Clément Champouillon"
-        layout="full-width"
-        fit="contain"
+        style="width: 128px; border-radius: 50%; aspect-ratio: 1 / 1; object-fit: cover; object-position: top; border: 2px solid var(--borderColor);"
       />
     </div>
     <div id="hero-text">
       <p>
-        <span class="field">Name</span>
+        <span class="field">Name:</span>
         <span>Clément Champouillon</span>
       </p>
       <p>
-        <span class="field">Birthday</span>
+        <span class="field">Birthday:</span>
         <span>15th September</span>
       </p>
       <p>
-        <span class="field">Nationality</span>
+        <span class="field">Nationality:</span>
         <span>French</span>
       </p>
       <p>
-        <span class="field">Location</span>
-        <a href="#where-i-live">Lyon, France</a>
+        <span class="field">Location:</span>
+        Lyon, France
       </p>
       <p>
-        <span class="field">Languages</span>
+        <span class="field">Languages:</span>
         <span>french, english, german</span>
       </p>
       <p>
-        <span class="field">Studies</span>
-        <a href="#how-i-learned-software-development"
-          >a mess, but led me to software development</a
-        >
+        <span class="field">Studies:</span>
+        a mess, but led me to software development
       </p>
       <p>
-        <span class="field">Profession</span>
-        <a href="#what-i-do">software developer</a>
+        <span class="field">Profession:</span>
+        software developer
       </p>
       <p>
-        <span class="field">Volunteer activities</span>
-        <a href="#">first aid</a>
+        <span class="field">Volunteer activities:</span>
+        first aid
       </p>
       <p>
-        <span class="field">Hobbies</span>
+        <span class="field">Hobbies:</span>
         programming, electronics, sailing, traveling, photography, <a
           href="plane-spotting">plane spotting</a
         >, sport

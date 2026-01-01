@@ -1,24 +1,25 @@
 ---
-import { Image } from 'astro:assets';
-import easy from '../assets/easy.png';
-import a400m from '../assets/A400M-night.jpg';
-import globemaster from '../assets/globemaster.jpg';
-import BasePage from '../layouts/BasePage.astro';
+import { Image } from "astro:assets";
+import easy from "../assets/easy.png";
+import a400m from "../assets/A400M-night.jpg";
+import globemaster from "../assets/globemaster.jpg";
+import BasePage from "../layouts/BasePage.astro";
 ---
+
 <script is:client>
-document.addEventListener('DOMContentLoaded', () => {
-  const h1 = document.querySelector('h1');
-  document.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    h1.style.transform = `translateX(-30%) translateY(-${scrollY * 0.2}px)`;
-    h1.style.opacity = 1 - scrollY / window.innerHeight;
-  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const h1 = document.querySelector("h1");
+    document.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      h1.style.transform = `translateX(-30%) translateY(-${scrollY * 0.2}px)`;
+      h1.style.opacity = 1 - scrollY / window.innerHeight;
+    });
   });
 </script>
 <style>
   @font-face {
-    src: url('/AlumniSansSC-Thin.ttf') format('truetype');
-    font-family: 'AlumniSansSC';
+    src: url("/AlumniSansSC-Thin.ttf") format("truetype");
+    font-family: "AlumniSansSC";
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -34,97 +35,110 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   :where([data-astro-image]) {
-  object-fit: var(--fit);
-  object-position: var(--pos);
-}
-:where([data-astro-image='full-width']) {
-  width: 100%;
-}
-:where([data-astro-image='constrained']) {
-  max-width: 100%;
-}
-    h1 {
-      font-family: 'AlumniSansSC', sans-serif;
-      top: 20%;
-      left: 30%;
-      transform: translateX(-30%);
-      position: fixed;
-      font-size: 8rem;
-      line-height: 5rem;
-      font-weight: 200;
-    }
+    object-fit: var(--fit);
+    object-position: var(--pos);
+  }
+  :where([data-astro-image="full-width"]) {
+    width: 100%;
+  }
+  :where([data-astro-image="constrained"]) {
+    max-width: 100%;
+  }
+  h1 {
+    font-family: "AlumniSansSC", sans-serif;
+    top: 20%;
+    left: 30%;
+    transform: translateX(-30%);
+    position: fixed;
+    font-size: 8rem;
+    line-height: 5rem;
+    font-weight: 200;
+  }
 
-#blackout {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75) 32px);
-  padding: 32px 16px;
-  z-index: 1;
-}
+  #blackout {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75) 32px
+    );
+    padding: 32px 16px;
+    z-index: 1;
+  }
 </style>
-  <BasePage title="Plane Spotting by Clément CHAMPOUILLON" description="I enjoy taking pictures of planes at the airport, especially at Lyon Saint-Exupéry Airport (LFLL)." fullWidth darkMode>
-    <Image
-        src={globemaster}
-      alt="Airbus A400M"
-      style="position: fixed; right: 0; bottom: 0; width: 100wv; height: 100vh; object-fit: cover; object-position: center; z-index: -1;"
-      fit="cover"
-      layout="full-width"
-    />
-    <h1>Plane<br />&nbsp;Spotting</h1>
-    <div style="height: calc(100dvh - 2.4rem)"></div>
-    <div id="blackout">
+<BasePage
+  title="Plane Spotting by Clément CHAMPOUILLON"
+  description="I enjoy taking pictures of planes at the airport, especially at Lyon Saint-Exupéry Airport (LFLL);"
+>
+  <Image
+    src={globemaster}
+    alt="Airbus A400M"
+    style="position: fixed; right: 0; bottom: 0; width: 100wv; height: 100vh; object-fit: cover; object-position: center; z-index: -1;"
+    fit="cover"
+    layout="full-width"
+  />
+  <h1>Plane<br />&nbsp;Spotting</h1>
+  <div style="height: calc(100dvh - 2.4rem)"></div>
+  <div id="blackout">
     <p>
-  I am a plane spotter, and I enjoy taking pictures of planes at the airport.
-  Because I live in Lyon, France, I often go to <a href="https://en.wikipedia.org/wiki/Lyon-Saint_Exup%C3%A9ry_Airport" target="_blank">Lyon Saint-Exupéry Airport</a> (LFLL).
-  </p>
-  <h2>Lyon St Exupéry Airport (LFLL)</h2>
-  <p>
-  <strong>Location:</strong> 45°43′32″N 005°04′52″E
-  <br />
-  <strong>Elevation:</strong> 250 m (821 ft)
-  <br />
-  <strong>Runways:</strong> 17R/35L (4000m/13,123ft), 17L/35R (2,679m/8,760ft)
-  </p>
-  <h2>Photos</h2>
-  <div class="photo-grid">
-    <figure>
-      <img src="/easy.jpg" alt="Airbus A320" />
-      <figcaption>
-        EasyJet Airbus A320-214 (OE-IZG)<br />
-        LFLL departure to HEGN<br />
-        17th May 2025
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="/transavia.jpg" alt="Transavia Boeing 737-800" />
-      <figcaption>
-        Transavia Boeing 737-8JP (F-HTVV)<br />
-        LFLL departure to DTTA<br />
-        17th May 2025
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="/KLM.webp" alt="KLM Embraer E195-E2" />
-      <figcaption>
-        KLM Embraer E195-E2 (PH-NXU)<br />
-        LFLL departure to EHAM<br />
-        17th May 2025
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="/emirates.webp" alt="Emirates Boeing 777-300ER" />
-      <figcaption>
-        Emirates Boeing 777-300ER (A6-EGV)<br />
-        LFLL arrival from OMDB<br />
-        17th May 2025
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="/terminal1.webp" alt="Terminal 1 at Lyon St Exupéry Airport" />
-      <figcaption>
-        Extension of Terminal 1 where Easy Jet and Transavia operate<br />
-        LFLL<br />
-        May 17th 2025
-      </figcaption>
-    </figure>
-  </div>
+      I am a plane spotter, and I enjoy taking pictures of planes at the
+      airport. Because I live in Lyon, France, I often go to <a
+        href="https://en.wikipedia.org/wiki/Lyon-Saint_Exup%C3%A9ry_Airport"
+        target="_blank">Lyon Saint-Exupéry Airport</a
+      > (LFLL).
+    </p>
+    <h2>Lyon St Exupéry Airport (LFLL)</h2>
+    <p>
+      <strong>Location:</strong> 45°43′32″N 005°04′52″E
+      <br />
+      <strong>Elevation:</strong> 250 m (821 ft)
+      <br />
+      <strong>Runways:</strong> 17R/35L (4000m/13,123ft), 17L/35R (2,679m/8,760ft)
+    </p>
+    <h2>Photos</h2>
+    <div class="photo-grid">
+      <figure>
+        <img src="/easy.jpg" alt="Airbus A320" />
+        <figcaption>
+          EasyJet Airbus A320-214 (OE-IZG)<br />
+          LFLL departure to HEGN<br />
+          17th May 2025
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="/transavia.jpg" alt="Transavia Boeing 737-800" />
+        <figcaption>
+          Transavia Boeing 737-8JP (F-HTVV)<br />
+          LFLL departure to DTTA<br />
+          17th May 2025
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="/KLM.webp" alt="KLM Embraer E195-E2" />
+        <figcaption>
+          KLM Embraer E195-E2 (PH-NXU)<br />
+          LFLL departure to EHAM<br />
+          17th May 2025
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="/emirates.webp" alt="Emirates Boeing 777-300ER" />
+        <figcaption>
+          Emirates Boeing 777-300ER (A6-EGV)<br />
+          LFLL arrival from OMDB<br />
+          17th May 2025
+        </figcaption>
+      </figure>
+      <figure>
+        <img
+          src="/terminal1.webp"
+          alt="Terminal 1 at Lyon St Exupéry Airport"
+        />
+        <figcaption>
+          Extension of Terminal 1 where Easy Jet and Transavia operate<br />
+          LFLL<br />
+          May 17th 2025
+        </figcaption>
+      </figure>
     </div>
+  </div>
 </BasePage>

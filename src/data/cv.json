@@ -87,6 +87,7 @@
     ],
     "location": "Paris, France",
     "start": "2024-07-01",
+    "end": "2025-08-31",
     "id": 6
   },
   {
@@ -96,7 +97,7 @@
     "description": "Komia provides all-in-one software solutions for restaurants and hotels",
     "keypoints": ["React Native development", "Google Cloud Platform"],
     "location": "Lyon, France",
-    "start": "2024-07-01",
+    "start": "2025-09-01",
     "id": 7
   }
 ]

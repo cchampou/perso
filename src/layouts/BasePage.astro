@@ -3,13 +3,10 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
-  fullWidth?: boolean;
-  darkMode?: boolean;
 }
-import { Image } from "astro:assets";
-import keyboardImage from "../assets/keyboard.png";
+import Logo from "../components/Logo.astro";
 
-const { title, description, image, fullWidth, darkMode } = Astro.props;
+const { title, description, image } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -76,6 +73,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       :root {
         --linkedin-color: #0077b5;
         --github-color: #333;
+        --bgContent: #0d1117;
+        --bgColor: #010409;
+        --fgColor: #f0f6fc;
+        --buttonColor: #212830;
+        --borderColor: #3d444d;
+        --borderRadius: 6px;
+      }
+      body {
+        background-color: var(--bgContent);
+        color: var(--fgColor);
+        font-family: Arial, sans-serif;
+        transition: background-color 1s ease-in-out;
       }
       p {
         line-height: 1.6;
@@ -128,40 +137,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         padding: 2px 4px;
       }
       blockquote {
-        background-color: #f1f1f1;
+        background-color: var(--bgContent);
         padding: 2px 32px;
         border-radius: 0 16px;
         border-width: 0 0 0 4px;
         border-color: #ddd;
         border-style: solid;
         margin: 0;
-      }
-
-      :where([data-astro-image]) {
-        object-fit: var(--fit);
-        object-position: var(--pos);
-      }
-      :where([data-astro-image="full-width"]) {
-        width: 100%;
-      }
-      :where([data-astro-image="constrained"]) {
-        max-width: 100%;
-      }
-    </style>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        transition: background-color 1s ease-in-out;
-        margin: 16px;
-      }
-      body.dark-mode {
-        background-color: #121212;
-        color: #dedede;
-      }
-      #content {
-        margin: auto;
-        margin-top: 32px;
-        max-width: 800px;
       }
       footer {
         text-align: center;
@@ -170,6 +152,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       header {
         height: 2.4rem;
       }
+      #content {
+        margin: auto;
+        margin-top: 32px;
+        max-width: 800px;
+      }
+
       header a {
         font-family: "NataSans", sans-serif;
         font-weight: 600;
@@ -184,23 +172,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }
       .full-width {
         max-width: 100vw !important;
-        margin: -16px !important;
       }
     </style>
   </head>
-  <body class={darkMode ? "dark-mode" : undefined}>
+  <body>
     <header>
-      <a href="/">
-        <Image
-          src={keyboardImage}
-          alt="Keyboard logo"
-          style={{
-            width: "64px",
-          }}
-        />
+      <a href="/" style="fill: var(--fgColor)">
+        <Logo width={48} height={48} />
       </a>
     </header>
-    <div id="content" class={fullWidth ? "full-width" : undefined}>
+    <div id="content">
       <slot />
     </div>
   </body>
