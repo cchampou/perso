@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import Button from "./Button.astro";
+import pp from "../assets/pp.png";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  givenName: "Clément",
+  familyName: "Champouillon",
+  jobTitle: "Chief Technology Officer",
+  nationality: {
+    "@type": "Country",
+    name: "France",
+  },
+  gender: {
+    "@type": "GenderType",
+    name: "Male",
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+<style>
+  #hero {
+    padding: 8px;
+    font-size: 14px;
+    border: solid 1px var(--borderColor);
+    border-radius: var(--borderRadius);
+    max-width: 400px;
+  }
+  @media (max-width: 768px) {
+    #hero {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div id="hero">
+  <div style="text-align: center;">
+    <Image
+      src={pp}
+      alt="Clément Champouillon"
+      style="width: 128px; border-radius: 50%; margin: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: top; border: 2px solid var(--borderColor);"
+    />
+  </div>
+  <h1>Clément Champouillon</h1>
+  <span class="field">🎂</span>
+  <span>15th September</span><br />
+  <span class="field">📍</span>
+  Lyon, France<br />
+  <span class="field">🗣️</span>
+  <span>french, english, german</span><br />
+  <span class="field">🎓</span>
+  a mess, but led me to software development<br />
+  <span class="field">💼</span>
+  software developer<br />
+  <span class="field">🫂</span>
+  first aid<br />
+  <span class="field">📸</span>
+  programming, electronics, sailing, traveling, photography, <a
+    href="plane-spotting">plane spotting</a
+  >, sport
+  <p style="text-align: center;">
+    <Button onClick="window.location.href='/blog'" label="Blog" />
+    <Button onClick="window.location.href='/contact'" label="Contact me" />
+    <Button onClick="window.location.href='/cv'" label="CV" />
+  </p>
+</div>
