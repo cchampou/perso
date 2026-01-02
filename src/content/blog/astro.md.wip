@@ -1,0 +1,20 @@
+---
+title: Astro just became my default choice for new websites
+description: The content and performance driven framework that should just work fine for anyone
+cover: ./images/astro.jpg
+date: 2026-01-02
+---
+
+I regularely see obeses client side web application and it's been already years since I started
+asking myself: Why? Why are we building those fat apps that takes way too long to develop,
+then try to debug it, then try to optimize it because it's too big to load... When a plain HTML+CSS
+source code alone would have done the job.
+
+There is obvisouly few legitimates answers to this. So if you you want to build something lighter,
+efficient, and easy to maintain, hop in, you might love what follows!
+
+## Content first, interactivity then
+
+Like many other so-called static site generators, Astro relies on files as a source of data. That means
+that most content you create will have to be markdown files and images.
+
