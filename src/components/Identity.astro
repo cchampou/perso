@@ -53,7 +53,7 @@ const structuredData = {
 <style>
   #hero {
     position: sticky;
-    top: 0;
+    top: 16px;
     padding: 16px;
     font-size: 14px;
     border: solid 1px var(--borderColor);
@@ -67,6 +67,8 @@ const structuredData = {
   }
   @media (max-width: 768px) {
     #hero {
+      position: relative;
+      top: 0;
       flex-direction: column;
     }
   }
